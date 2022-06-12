@@ -6,7 +6,7 @@ This is the lab resources for SUSTech EE346.
 ## 1. Clone the source code
   sudo apt-get install ros-melodic-navigation
   cd ~/catkin_ws/src
-  git clone https://github.com/tianyanyushui/EE346-lab6
+  git clone https://github.com/tianyanyushui/EE346-lab7
   
 ## 2. Catkin make the EE346-lab6 package
   cd ..
@@ -32,34 +32,24 @@ This is the lab resources for SUSTech EE346.
    
    roslaunch turtlebot3_bringup turtlebot3_robot.launch
    
-## 7. Run lane following python node
+## 7. Run the project
    
-   cd ~/catkin_ws/src/EE346-lab6/lab6/scripts/
-   
-   chmod +x lane_following_please.py
-   
-   cd ~/catkin_ws
-   
-   source devel/setup.bash
-   
-   rosrun EE346-lab6 lane_following_please.py
-   
-## 8.1 Open the map
-   cd ~/catkin_ws/src/EE346-lab6/
-   
+   cd ~/catkin_ws/src/EE346-lab7/
    roslaunch turtlebot3_navigation turtlebot3_navigation.launch map_file:=$HOME/map_new.yaml
+   
+   In a new terminal:
+   cd ~/catkin_ws/src/EE346-lab7/EE346-lab7
+   rosrun sound_play soundplay_node.py
+   
+   In a new terminal:
+   cd ~/catkin_ws/src/EE346-lab7/EE346-lab7
+   python run.py 
+
+   If your want to stop your robot,stop the run.py and:
+   python lane_following_reset.py 
 
    
-## 8.2 Run navigation node
-   cd ~/catkin_ws/src/EE346-lab6/lab6/scripts/
-   
-   chmod +x navigation_demo.py
-   
-   cd ~/catkin_ws
-   
-   source devel/setup.bash
-   
-   rosrun EE346-lab6 navigation_demo.py
+ 
    
 
 
