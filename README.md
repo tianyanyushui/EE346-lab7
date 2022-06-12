@@ -6,54 +6,53 @@ This is the lab resources for SUSTech EE346.
 ## 1. Clone the source code
   cd ~/catkin_ws/src
   
-  git clone https://github.com/tianyanyushui/lane_following
+  git clone https://github.com/tianyanyushui/EE346-lab6
   
-## 2. Catkin make the lane following package
+## 2. Catkin make the EE346-lab6 package
   cd ..
   
   catkin_make
 
-## 3. Add course models
-   export GAZEBO_MODEL_PATH=${GAZEBO_MODEL_PATH}:~/catkin_ws/src/lane_following/models
+## 3. Add course models to the end of ~/.bashrc in computer(replace 192.168.3.244 as your comuter ip)
+   export TURTLEBOT3_MODEL=burger
+   export ROS_MASTER_URI=http://192.168.3.244:11311
+   export ROS_HOSTNAME=192.168.3.244
    
-## 4. Launch the gazebo map
-   source ~/catkin_ws/devel/setup.bash
+## 4. Add course models to the end of ~/.bashrc in your robot(replace 192.168.3.244 as your comuter ip,192.168.3.81 as your robot ip)
+  
+   export ROS_MASTER_URI=http://192.168.3.244:11311
+   export ROS_HOSTNAME=192.168.3.81
    
-   roslaunch lane_following race_track.launch 
+  
 
 ## 5. Run lane following python node
    
-   cd ~/catkin_ws/src/lane_following/scripts/
+   cd ~/catkin_ws/src/EE346-lab6/lab6/scripts/
    
-   chmod +x lane_following.py
+   chmod +x lane_following_please.py
    
    cd ~/catkin_ws
    
    source devel/setup.bash
    
-   rosrun lane_following lane_following.py
+   rosrun EE346-lab6 lane_following_please.py
    
-![image](https://github.com/zhaojieting/linefollowing/blob/main/data/demo.gif)
+## 6.1 open the map
+   cd ~/catkin_ws
+   
+   roslaunch turtlebot3_navigation turtlebot3_navigation.launch map_file:=$HOME/map_new.yaml
 
-## 6. Get bird’s-eye-view
-   cd ~/catkin_ws/src/lane_following/scripts/
    
-   chmod +x lane_following_part2.py
+## 6.2 Run navigation node
+   cd ~/catkin_ws/src/EE346-lab6/lab6/scripts/
+   
+   chmod +x navigation_demo.py
    
    cd ~/catkin_ws
    
    source devel/setup.bash
    
-   rosrun lane_following lane_following_part2.py
+   rosrun EE346-lab6 navigation_demo.py
    
-## 7. Stop Sign with Aruco Marker
-   cd ~/catkin_ws/src/lane_following/scripts/
-   
-   chmod +x lane_following_part3.py
-   
-   cd ~/catkin_ws
-   
-   source devel/setup.bash 
-  
-   rosrun lane_following lane_following_part3.py
+
 
