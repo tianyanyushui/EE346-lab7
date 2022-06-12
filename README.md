@@ -45,7 +45,8 @@ This is the lab resources for SUSTech EE346.
    cd ~/catkin_ws/src/EE346-lab7/EE346-lab7
    python run.py 
 
-   If your want to stop your robot,stop the run.py and:
+## 8. Stop the robot
+   cd ~/catkin_ws/src/EE346-lab7/EE346-lab7
    python lane_following_reset.py 
 
    
