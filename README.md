@@ -4,8 +4,8 @@ This is the lab resources for SUSTech EE346.
 # Usage
 
 ## 1. Clone the source code
+  sudo apt-get install ros-melodic-navigation
   cd ~/catkin_ws/src
-  
   git clone https://github.com/tianyanyushui/EE346-lab6
   
 ## 2. Catkin make the EE346-lab6 package
@@ -19,13 +19,20 @@ This is the lab resources for SUSTech EE346.
    export ROS_HOSTNAME=192.168.3.244
    
 ## 4. Add course models to the end of ~/.bashrc in your robot(replace 192.168.3.244 as your comuter ip,192.168.3.81 as your robot ip)
-  
    export ROS_MASTER_URI=http://192.168.3.244:11311
    export ROS_HOSTNAME=192.168.3.81
-   
-  
 
-## 5. Run lane following python node
+## 5. Source the .bashrc file(in both computer and robot)
+   source ~/.bashrc
+   
+## 6. Connect your robot(replace 192.168.3.81 as your robot ip)
+   roscore 
+   
+   in a new  terminal: ssh pi@192.168.3.81
+   
+   roslaunch turtlebot3_bringup turtlebot3_robot.launch
+   
+## 7. Run lane following python node
    
    cd ~/catkin_ws/src/EE346-lab6/lab6/scripts/
    
@@ -37,13 +44,13 @@ This is the lab resources for SUSTech EE346.
    
    rosrun EE346-lab6 lane_following_please.py
    
-## 6.1 open the map
-   cd ~/catkin_ws
+## 8.1 Open the map
+   cd ~/catkin_ws/src/EE346-lab6/
    
    roslaunch turtlebot3_navigation turtlebot3_navigation.launch map_file:=$HOME/map_new.yaml
 
    
-## 6.2 Run navigation node
+## 8.2 Run navigation node
    cd ~/catkin_ws/src/EE346-lab6/lab6/scripts/
    
    chmod +x navigation_demo.py
