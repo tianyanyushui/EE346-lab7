@@ -8,7 +8,7 @@ This is the lab resources for SUSTech EE346.
   cd ~/catkin_ws/src
   git clone https://github.com/tianyanyushui/EE346-lab7
   
-## 2. Catkin make the EE346-lab6 package
+## 2. Catkin make the EE346-lab7 package
   cd ..
   
   catkin_make
